@@ -1,0 +1,48 @@
+### Get all films
+GET http://localhost:3000/films
+Accept: application/json
+
+
+### Get films with minimum duration (valid)
+GET http://localhost:3000/films?minimum-duration=130
+Accept: application/json
+
+
+### Get films with minimum duration (invalid)
+GET http://localhost:3000/films?minimum-duration=abc
+Accept: application/json
+
+
+### Get one film (exists)
+GET http://localhost:3000/films/1
+
+
+### Get one film (not found)
+GET http://localhost:3000/films/999
+
+
+### Create a film (valid)
+POST http://localhost:3000/films
+Content-Type: application/json
+
+
+{
+"title": "Interstellar",
+"director": "Christopher Nolan",
+"duration": 169,
+"budget": 165,
+"description": "https://example.com/interstellar-desc",
+"imageUrl": "https://example.com/interstellar.jpg"
+}
+
+
+### Create a film (invalid duration)
+POST http://localhost:3000/films
+Content-Type: application/json
+
+
+{
+"title": "Bad Movie",
+"director": "No One",
+"duration": -5
+}

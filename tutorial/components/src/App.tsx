@@ -1,7 +1,6 @@
 import "./App.css";
 import sound from "./assets/sounds/Infecticide-11-Pizza-Spinoza.mp3"
 import logo from "./assets/images/js-logo.png";
-import pizzaBackground from "./assets/images/pizza.jpg";
 
 function App() {
   return (

@@ -1,4 +1,5 @@
 import { type IMovie } from "./Movie";
+import MovieItem from "./MovieItem";
 
 interface CinemaProps {
   name: string;
@@ -12,9 +13,7 @@ const Cinema =(props : CinemaProps) =>(
         <h2>{props.name}</h2>
         <ul>
            {props.movies.map((movie) => (
-          <li key={movie.title}>
-            <strong>{movie.title}</strong> - Réalisateur :{movie.director}
-          </li>
+                  <MovieItem key={movie.title} movie={movie} />
             ))}
         </ul>
       </div>

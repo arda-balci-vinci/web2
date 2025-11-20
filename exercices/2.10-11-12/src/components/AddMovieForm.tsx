@@ -1,8 +1,8 @@
 import { SyntheticEvent, useState } from "react";
-import { Movie } from "./Movie";
+import { NewMovie } from "./Movie";
 
 interface AddMovieFormProps {
-  onMovieAdded: (movie: Movie) => void;
+  onMovieAdded: (movie: NewMovie) => void;
 }
 
 const AddMovieForm = ({ onMovieAdded }: AddMovieFormProps) => {

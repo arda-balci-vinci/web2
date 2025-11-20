@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Movie } from "./Movie";
 
+
 interface MovieItemProps {
   movie: Movie;
 }

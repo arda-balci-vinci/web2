@@ -11,7 +11,6 @@ function App() {
       return response.json()
     })
     .then((data)=>{
-       console.log(data);
       setJoke({
         texte: data.joke ?? "No joke found",
         categorie: data.category ?? "Unknow",

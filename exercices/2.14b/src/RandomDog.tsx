@@ -27,7 +27,14 @@ const RandomDog=() => {
         (async () => {
          await fetchDogImage();
         })();
+        const interval=setInterval(()=> {
+            fetchDogImage();
+        },5000);
+
+        return()=> clearInterval(interval);
     },[]);
+
+    
 
     if(!dog) {
         return <p>Loading ...</p>;

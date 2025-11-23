@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import type { Joke } from './types';
 
-function App() {
+  const App= () =>{
   const [joke, setJoke] = useState<Joke | undefined>(undefined);
 
-  useEffect(()=> {
-    fetch("https://v2.jokeapi.dev/joke/Any?type=single")
+ 
+    const fetchJoke= ()=>{
+      fetch("https://v2.jokeapi.dev/joke/Any?type=single")
     .then((response)=>{
       return response.json()
     })
@@ -16,7 +17,13 @@ function App() {
         categorie: data.category ?? "Unknow",
       });
     });
-  },[]);
+    }
+    
+   useEffect(()=> {
+    fetchJoke();
+    setInterval(fetchJoke,10000);
+   },[]); 
+    
 
   if(!joke){
     return<p>Loading...</p>;
